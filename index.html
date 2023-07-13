@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-size: 30px;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+      flex-direction: row;
+      background-color: rgb(98, 55, 25);
+    }
+    
+    main {
+      margin: 3rem auto;
+      background-image: linear-gradient(rgb(174, 96, 13), rgb(123, 111, 74));
+      padding: 30px;
+      background-color: bisque;
+      box-shadow: 1rem 1rem 1rem;
+      border-radius: 15px;
+    
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #date {
+      width: 150px;
+    }
+    
+    input {
+      border-radius: 8px;
+      border: double black 4px;
+      font-size: 18px;
+      width: 95%;
+      text-align: center;
+      height: 2.5rem;
+    }
+    
+    button {
+      background-color: transparent;
+      border-radius: 8px;
+      font-size: 1.7rem;
+      cursor: pointer;
+      box-shadow: 8px 8px 10px;
+      font-weight: 600;
+      transition: 0.4s;
+      width: 8rem;
+      height: 2.5rem;
+    }
+    
+    #inputPassword {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+    }
+    
+    #result {
+      margin: 3rem auto;
+      width: 95%;
+      font-weight: 600;
+      font-family: "Shadows Into Light", cursive;
+      padding: 2.5rem;
+      border: 2px solid black;
+      background-color: burlywood;
+      box-shadow: 1rem 1rem 1rem;
+      border-radius: 15px;
+    }
+    
+    @media (max-width: 500px) {
+      main {
+        font-size: 25px;
+      }
+    
+      #result {
+        font-size: 20px;
+        width: 90%;
+      }
+    }
+    
+    .amostra {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .newLine {
+      width: 100%;
+      border: 2px dashed black;
+    }
+    
+    .newValue {
+      text-align: end;
+    }
+    
+    .secondary {
+      padding: 0.5rem;
+      background-color: burlywood;
+    }</style>
+    </div>
+    <main>
+      <h2>Total de Caixa</h2>
+      <label for="totalCaixa">Total de caixa</label>
+      <input type="number" name="totalCaixa" id="totalCaixa" />
+      <label for="multibanco">Total em MB</label>
+      <input type="number" name="multibanco" id="multibanco" />
+      <label for="excluded">Total excluído</label>
+      <input type="number" name="excluded" id="excluded" />
+      <label for="mistake">Engano</label>
+      <input type="number" name="mistake" id="mistake" />
+      <button id="calculate">Calcular</button>
+    </main>
+    
+    <div id="result" style="display: none"></div>
+    <div id="secondary"></div>
+    <script defer>document.getElementById("calculate").addEventListener("click", calculate);
+
+      function calculate() {
+        const info = document.querySelector("main");
+        info.style.display = "none";
+        const result = document.getElementById("result");
+        result.style.display = "block";
+        const totalCaixa = Number(document.getElementById("totalCaixa").value);
+        const multibanco = Number(document.getElementById("multibanco").value);
+        const excluded = Number(document.getElementById("excluded").value);
+        const mistake = Number(document.getElementById("mistake").value);
+        const fora = excluded - mistake;
+      
+        const showDiv = document.getElementById("result");
+        const newRow = document.createElement("h4");
+        const d = new Date();
+        let day = d.getDate();
+        const month = [
+          "Janeiro",
+          "Fevereiro",
+          "Março",
+          "Abril",
+          "Maio",
+          "Junho",
+          "Julho",
+          "Agosto",
+          "Setembro",
+          "Outubro",
+          "Novembro",
+          "Dezembro",
+        ];
+        let Month = month[d.getMonth()];
+      
+        newRow.innerText = `Caixa Duque: ${day}/${Month}`;
+        showDiv.appendChild(newRow);
+      
+        const finalResult = {
+          MB: `${multibanco.toFixed(2).replace(".", ",")} €`,
+          Cash: `${(totalCaixa - multibanco).toFixed(2).replace(".", ",")} €`,
+          Total: `${totalCaixa.toFixed(2).replace(".", ",")} €`,
+          Fora: `${fora.toFixed(2).replace(".", ",")} €`,
+          TOTAL: `${(totalCaixa + fora).toFixed(2).replace(".", ",")} €`,
+        };
+        for (var key in finalResult) {
+          const newLine = document.createElement("div");
+          newLine.className = "newLine";
+          const newDiv = document.createElement("div");
+          const newkey = document.createElement("p");
+          const newValue = document.createElement("p");
+          newValue.className = "newValue";
+          newkey.innerText = key;
+          newValue.innerText = finalResult[key];
+          newDiv.append(newkey, newValue);
+          newDiv.className = "amostra";
+          showDiv.appendChild(newDiv);
+          if (key === "Cash" || key === "Fora") {
+            showDiv.appendChild(newLine);
+          }
+        }
+      
+        const secondary = document.getElementById("secondary");
+        secondary.textContent = `${(totalCaixa - multibanco + fora).toFixed(
+          2
+        )} € no saquinho`;
+        secondary.className = "secondary";
+      }
+      </script>
+  </body>
+</html>
