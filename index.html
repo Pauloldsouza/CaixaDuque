@@ -5,26 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="newCaixa.css">
+    <link rel="stylesheet" href="newCaixa.css" />
   </head>
   <body>
-    
+    <div class="choice">
+      <h2>Caixa</h2>
+      <button id="higher">Maior</button>
+      <h2>ou</h2>
+      <button id="lower">Menor</button>
+      <h2>Multibanco</h2>
     </div>
-    <main>
-      <h2>Total de Caixa</h2>
-      <label for="totalCaixa">Total de caixa</label>
-      <input type="number" name="totalCaixa" id="totalCaixa" />
-      <label for="multibanco">Total em MB</label>
-      <input type="number" name="multibanco" id="multibanco" />
-      <label for="excluded">Total excluído</label>
-      <input type="number" name="excluded" id="excluded" />
-      <label for="mistake">Engano</label>
-      <input type="number" name="mistake" id="mistake" />
+    <main style="display: none">
+      <h2>Caixa > MB</h2>
+      <label for="totalCaixa">Total de caixa:</label><br />
+      <input type="number" name="totalCaixa" id="totalCaixa" /><br />
+      <label for="multibanco">Total em MB:</label><br />
+      <input type="number" name="multibanco" id="multibanco" /><br />
+      <label for="excluded">Total excluído:</label><br />
+      <input type="number" name="excluded" id="excluded" /><br />
+      <label for="mistake">Cancelamentos:</label><br />
+      <input type="number" name="mistake" id="mistake" /><br />
       <button id="calculate">Calcular</button>
     </main>
-    
+    <div class="imprevisto" style="display: none">
+      <h4>Fase de testes, favor conferir com atenção!</h4>
+      <h2>Caixa < MB</h2>
+      <label for="value">Qual o total de Multibanco?</label><br />
+      <input type="number" id="value" /><br />
+      <label for="equalizer">Quanto precisou registar?</label><br />
+      <input type="number" id="equalizer" /><br />
+      <label for="mesafora">valor excluído:</label><br />
+      <input type="number" name="mesafora" id="mesafora" /><br />
+      <label for="cancelations">valor dos cancelamentos:</label><br />
+      <input type="number" name="cancelations" id="cancelations" /><br />
+      <button id="finish">Calcular</button>
+    </div>
     <div id="result" style="display: none"></div>
-    <div id="secondary"></div>
+    <div id="secondary" name="secondary"></div>
+    <p style="text-align: center"><strong>&copy;Paulo Souza </strong></p>
     <script src="newCaixa.js"></script>
   </body>
 </html>
