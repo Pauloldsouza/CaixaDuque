@@ -4,16 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Caixa</title>
     <link rel="stylesheet" href="newCaixa.css" />
+    <!--link do googleFonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="choice">
-      <h2>Caixa</h2>
-      <button id="higher">Maior</button>
-      <h2>ou</h2>
-      <button id="lower">Menor</button>
-      <h2>Multibanco</h2>
+      <h3>Qual o mais alto?</h3>
+      <div class="buttons">
+        <button id="higher">
+          <img src="attach_money_FILL0_wght400_GRAD0_opsz24.png" alt="Cash" />
+        </button>
+
+        <button id="lower">
+          <img src="credit_card_FILL0_wght400_GRAD0_opsz24.png" alt="MB" />
+        </button>
+      </div>
     </div>
     <main style="display: none">
       <h2>Caixa > MB</h2>
@@ -42,7 +54,9 @@
     </div>
     <div id="result" style="display: none"></div>
     <div id="secondary" name="secondary"></div>
-    <p style="text-align: center"><strong>&copy;Paulo Souza </strong></p>
+    <p style="text-align: center">
+      &copy;<strong id="copyright">Paulo Souza </strong>
+    </p>
     <script src="newCaixa.js"></script>
   </body>
 </html>

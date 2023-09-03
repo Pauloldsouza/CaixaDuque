@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 1rem;
   flex-direction: column;
   background-color: rgb(98, 55, 25);
 }
@@ -118,4 +118,21 @@ button {
   background-color: burlywood;
   display: none;
   justify-content: center;
+}
+
+#copyright {
+  font-family: "Pacifico", cursive;
+}
+
+#higher,
+#lower {
+  height: 6rem;
+  width: auto;
+  padding: 1.3rem;
+  border-radius: 50%;
+  border: solid black 3px;
+}
+
+img {
+  height: 2.5rem;
 }
