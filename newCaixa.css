@@ -79,7 +79,6 @@ button {
   margin: 3rem auto;
   width: 95%;
   font-weight: 600;
-  font-family: "Shadows Into Light", cursive;
   padding: 2.5rem;
   border: 2px solid black;
   background-color: burlywood;
@@ -126,6 +125,7 @@ button {
 
 #higher,
 #lower {
+  background-image: linear-gradient(mediumseagreen, rgb(65, 65, 140));
   height: 6rem;
   width: auto;
   padding: 1.3rem;
