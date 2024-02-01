@@ -4,6 +4,20 @@ const choice = document.querySelector(".choice");
 const main = document.querySelector("main");
 const imprevisto = document.querySelector(".imprevisto");
 const secondary = document.querySelector("#secondary");
+const month = [
+  "Janeiro",
+  "Fevereiro",
+  "Março",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosto",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Dezembro",
+];
 function calculate() {
   document.querySelector("main").style.display = "none";
   document.querySelector(".imprevisto").style.display = "none";
@@ -18,20 +32,6 @@ function calculate() {
   const newRow = document.createElement("h4");
   const d = new Date();
   let day = d.getDate();
-  const month = [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro",
-  ];
   let Month = month[d.getMonth()];
 
   newRow.innerText = `Caixa Duque: ${day}/${Month}`;
@@ -83,20 +83,6 @@ function finish() {
   const newRow = document.createElement("h4");
   const d = new Date();
   let day = d.getDate();
-  const month = [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro",
-  ];
   let Month = month[d.getMonth()];
   result.appendChild(newRow);
 
