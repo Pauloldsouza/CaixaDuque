@@ -14,7 +14,11 @@ body {
   justify-content: center;
   margin-top: 1rem;
   flex-direction: column;
-  background-color: rgb(98, 55, 25);
+  background-image: url("sardinhas.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: darken;
 }
 
 .choice {
@@ -27,6 +31,10 @@ body {
   border-radius: 3rem;
   border: solid black 4px;
   gap: 0.8rem;
+}
+
+.choice h3 {
+  text-align: center;
 }
 
 main,
