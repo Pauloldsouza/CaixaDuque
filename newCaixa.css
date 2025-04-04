@@ -40,7 +40,7 @@ body {
 main,
 .imprevisto {
   margin: 3rem auto;
-  background-image: linear-gradient(rgb(174, 96, 13), rgb(123, 111, 74));
+  background-image: url("amadeirado.jpg");
   padding: 30px;
   background-color: bisque;
   box-shadow: 1rem 1rem 1rem;
@@ -55,7 +55,7 @@ main,
 
 input {
   border-radius: 8px;
-  border: double black 4px;
+  border: double rgb(0, 0, 0) 4px;
   font-size: 18px;
   width: 60%;
   text-align: center;
@@ -112,6 +112,7 @@ a {
   #result {
     font-size: 20px;
     width: 90%;
+    background-image: url("amadeirado.jpg");
   }
 }
 
@@ -131,7 +132,7 @@ a {
 
 #secondary {
   padding: 0.5rem;
-  background-color: burlywood;
+  background-image: url("amadeirado.jpg");
   display: none;
   justify-content: center;
 }
@@ -152,4 +153,13 @@ a {
 
 img {
   height: 2.5rem;
+}
+
+.transparent-bg {
+  color: black; /* Cor do texto */
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.601),
+    /* Sombra deslocada para baixo e direita */ -2px -2px 0px white,
+    /* Sombra deslocada para cima e esquerda */ 2px -2px 0px white,
+    /* Sombra para cima e direita */ -2px 2px 0px white; /* Sombra para baixo e esquerda */
+  font-weight: bold; /* Negrito para destacar */
 }

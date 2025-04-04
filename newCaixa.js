@@ -5,18 +5,18 @@ const main = document.querySelector("main");
 const imprevisto = document.querySelector(".imprevisto");
 const secondary = document.querySelector("#secondary");
 const month = [
-  "Janeiro",
-  "Fevereiro",
-  "Março",
-  "Abril",
-  "Maio",
-  "Junho",
-  "Julho",
-  "Agosto",
-  "Setembro",
-  "Outubro",
-  "Novembro",
-  "Dezembro",
+  "Jan",
+  "Fev",
+  "Mar",
+  "Abr",
+  "Mai",
+  "Jun",
+  "Jul",
+  "Ago",
+  "Set",
+  "Out",
+  "Nov",
+  "Dez",
 ];
 function calculate() {
   document.querySelector("main").style.display = "none";
